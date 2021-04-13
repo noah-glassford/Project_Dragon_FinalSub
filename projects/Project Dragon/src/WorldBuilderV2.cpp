@@ -14,7 +14,7 @@
 
 
 std::vector<GameObject> WorldBuilderV2::currentWorldGOs;
-int WorldBuilderV2::WorldData[100][100]{ 0 };
+int WorldBuilderV2::WorldData[25][25]{ 0 };
 const int WorldBuilderV2::nodeSize = 40;
 int WorldBuilderV2::WorldDataEAndEPoints[25][25][1]{ 0 };
 
@@ -80,11 +80,11 @@ void WorldBuilderV2::FillWorldData()
 		pastX = currentX; pastY = currentY;
 
 		//Data check
-		if (WorldData[currentX + 1][currentY] < 1 && currentX < 99)
+		if (WorldData[currentX + 1][currentY] < 1 && currentX < 24)
 			canRight = true;
 		if (WorldData[currentX - 1][currentY] < 1 && currentX > 1)
 			canLeft = true;
-		if (WorldData[currentX][currentY + 1] < 1 && currentY < 99)
+		if (WorldData[currentX][currentY + 1] < 1 && currentY < 24)
 			canUp = true;
 		if (WorldData[currentX][currentY - 1] < 1 && currentY > 1)
 			canDown = true;
@@ -135,8 +135,8 @@ void WorldBuilderV2::GenerateTiles()
 	//
 	//	TEMP -- Builds the world of empty tiles -- TEMP
 	//
-	for (int x = 0; x < 100; x++) {
-		for (int y = 0; y < 100; y++) {
+	for (int x = 0; x < 25; x++) {
+		for (int y = 0; y < 25; y++) {
 			if (WorldData[x][y] > 0) { //should place a tile
 				//Floor
 
@@ -211,8 +211,8 @@ void WorldBuilderV2::GenerateTiles()
 int enCount;
 void WorldBuilderV2::PopulateWorld(int dificulty)
 {
-	for (int x = 0; x < 100; x++) {
-		for (int y = 0; y < 100; y++) {	//Read through the world data Array
+	for (int x = 0; x < 25; x++) {
+		for (int y = 0; y < 25; y++) {	//Read through the world data Array
 			if (WorldData[x][y] > 0) {	//Find spawned floors and spawn enemies in them
 				int RandEnemyType = rand() % 16;
 				if (RandEnemyType == 0) {

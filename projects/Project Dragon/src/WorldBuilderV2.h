@@ -15,7 +15,7 @@ public:
 	static std::vector<GameObject> currentWorldGOs;
 
 	//TrueFalse data for the world || helps track if there is already a tile placed on a location
-	static int WorldData[100][100];
+	static int WorldData[25][25];
 
 	//	--	 Use this for changine the node size, will update the world get		-- //
 	static const int nodeSize;
