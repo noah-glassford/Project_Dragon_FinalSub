@@ -1,0 +1,20 @@
+**/desktop.ini
+
+**/obj/**
+**/bin/**
+**/.vs/**
+**/.suo/**
+**.user
+
+shared_assets/**
+*.zip
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# Exclusions
+!**/premake5.exe
+!**/dll/**
+!**/external/**/*.lib
+
+
